@@ -2,8 +2,8 @@
 
 #include <ESP8266WiFi.h>
 
-const char* ssid     = "arduino";      
-const char* password = "kulo6770";  
+const char* ssid     = "YOUR_SSID";      
+const char* password = "YOUR_PASSWORD";  
 String result;
 
 String motion ;
@@ -14,15 +14,15 @@ void setup()
   pinMode(LED_BUILTIN, OUTPUT);
   delay(2000);
   Serial.begin(115200);
-  WiFi.hostname("ESPDrzwi");
+  WiFi.hostname("ESP");
   WiFi.begin(ssid, password);
 }
 
 void ifttt() 
 {
   const char host[ ] = "maker.ifttt.com";         
-  const char trigger[ ] = "lot_Motion_Sensor";                 
-  const char APIKey[ ] = "kT9aCIo2VjjYNioqabtneAoQl5kRK2sZIUVv4wfjOC5";     
+  const char trigger[ ] = "YOUR_EVENT_NAME";          //ifttt event name    
+  const char APIKey[ ] = "YOUR_KEY";  //ifttt key    
  
   WiFiClient client;
   if (!client.connect(host, 80)) {
